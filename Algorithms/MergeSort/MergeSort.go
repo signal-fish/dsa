@@ -2,35 +2,37 @@ package MergeSort
 
 func Merge(arr []int, leftIndex, divideIndex, rightIndex int) {
 	var tempArray1, tempArray2 []int
+
 	for i := leftIndex; i <= divideIndex; i++ {
 		tempArray1 = append(tempArray1, arr[i])
 	}
 	for i := divideIndex + 1; i <= rightIndex; i++ {
 		tempArray2 = append(tempArray2, arr[i])
 	}
-	arrayIndex := leftIndex
+
+	arrIndex := leftIndex
 	tempArray1Index := 0
 	tempArray2Index := 0
+
 	for tempArray1Index != len(tempArray1) && tempArray2Index != len(tempArray2) {
 		if tempArray1[tempArray1Index] <= tempArray2[tempArray2Index] {
-			arr[arrayIndex] = tempArray1[tempArray1Index]
+			arr[arrIndex] = tempArray1[tempArray1Index]
 			tempArray1Index += 1
 		} else {
-			arr[arrayIndex] = tempArray2[tempArray2Index]
+			arr[arrIndex] = tempArray2[tempArray2Index]
 			tempArray2Index += 1
 		}
-		arrayIndex += 1
+		arrIndex += 1
 	}
 	for tempArray1Index < len(tempArray1) {
-		arr[arrayIndex] = tempArray1[tempArray1Index]
+		arr[arrIndex] = tempArray1[tempArray1Index]
 		tempArray1Index += 1
-		arrayIndex += 1
-
+		arrIndex += 1
 	}
 	for tempArray2Index < len(tempArray2) {
-		arr[arrayIndex] = tempArray2[tempArray2Index]
+		arr[arrIndex] = tempArray2[tempArray2Index]
 		tempArray2Index += 1
-		arrayIndex += 1
+		arrIndex += 1
 	}
 }
 

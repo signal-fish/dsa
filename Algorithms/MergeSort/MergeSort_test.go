@@ -18,6 +18,7 @@ func TestMergeSort(t *testing.T) {
 	copy(arr2, arr1)
 	arr2.Sort()
 	MergeSort(arr1, 0, len(arr1)-1)
+
 	for i := range arr1 {
 		if arr1[i] != arr2[i] {
 			t.Fail()
