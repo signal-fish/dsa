@@ -1,4 +1,4 @@
-package LikedList
+package SinglyLikedList
 
 import (
 	"fmt"
@@ -6,7 +6,7 @@ import (
 )
 
 func TestInsertToHead(t *testing.T) {
-	list := NewLinkedList()
+	list := NewSinglyLinkedList()
 	for i := 0; i < 10; i++ {
 		list.InsertToHead(i + 1)
 	}
@@ -14,7 +14,7 @@ func TestInsertToHead(t *testing.T) {
 }
 
 func TestInsertToTail(t *testing.T) {
-	list := NewLinkedList()
+	list := NewSinglyLinkedList()
 	for i := 0; i < 10; i++ {
 		list.InsertToTail(i + 1)
 	}
@@ -22,7 +22,7 @@ func TestInsertToTail(t *testing.T) {
 }
 
 func TestFindByIndex(t *testing.T) {
-	list := NewLinkedList()
+	list := NewSinglyLinkedList()
 	for i := 0; i < 10; i++ {
 		list.InsertToTail(i + 1)
 	}
@@ -33,7 +33,7 @@ func TestFindByIndex(t *testing.T) {
 }
 
 func TestDeleteNode(t *testing.T) {
-	list := NewLinkedList()
+	list := NewSinglyLinkedList()
 	for i := 0; i < 10; i++ {
 		list.InsertToTail(i + 1)
 	}
@@ -43,5 +43,5 @@ func TestDeleteNode(t *testing.T) {
 	fmt.Println("After Delete 1:", list.GetItems())
 
 	t.Log(list.DeleteNode(list.head.next.next)) // delete 3
-	fmt.Println("After Delete 3:", list.GetItems())
+	fmt.Println("After Delete 1 and 3:", list.GetItems())
 }

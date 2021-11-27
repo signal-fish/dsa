@@ -1,4 +1,4 @@
-package LikedList
+package SinglyLikedList
 
 import "fmt"
 
@@ -24,21 +24,8 @@ func (node *Node) GetValue() interface{} {
 	return node.value
 }
 
-func NewLinkedList() *LinkedList {
+func NewSinglyLinkedList() *LinkedList {
 	return &LinkedList{NewNode(0), 0}
-}
-
-// Insert a new node after a certain node
-func (list *LinkedList) InsertAfter(node *Node, value interface{}) bool {
-	if node == nil {
-		return false
-	}
-	newNode := NewNode(value)
-	oldNext := node.next
-	node.next = newNode
-	newNode.next = oldNext
-	list.length++
-	return true
 }
 
 // Insert a new node before a certain node
@@ -61,6 +48,19 @@ func (list *LinkedList) InsertBefore(node *Node, value interface{}) bool {
 	newNode := NewNode(value)
 	prev.next = newNode
 	newNode.next = current
+	list.length++
+	return true
+}
+
+// Insert a new node after a certain node
+func (list *LinkedList) InsertAfter(node *Node, value interface{}) bool {
+	if node == nil {
+		return false
+	}
+	newNode := NewNode(value)
+	oldNext := node.next
+	node.next = newNode
+	newNode.next = oldNext
 	list.length++
 	return true
 }
