@@ -7,8 +7,6 @@ import (
 
 func TestHashTable(t *testing.T) {
 	table := NewHashTable()
-	fmt.Println(table)
-
 	fmt.Println("Before Add('test1', 1), Get('test1') ==> ", table.Get("test1"))
 	table.Add("test1", 1)
 	fmt.Println("After Add('test1', 1), Get('test1') ==> ", table.Get("test1"))
